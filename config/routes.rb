@@ -1,4 +1,16 @@
 ThePantryBackend::Application.routes.draw do
+  ActiveAdmin.routes(self)
+
+  devise_for :admin_users, ActiveAdmin::Devise.config
+
+  devise_for :users
+
+  devise_scope :user do
+    post 'registration' => 'registration#create', :as => 'register'
+    post 'session' => 'session#create', :as => 'login'
+    delete 'session' => 'session#destroy', :as => 'logout'
+   end
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
