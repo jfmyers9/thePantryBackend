@@ -33,7 +33,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
 
       ## Token authenticatable
       t.string :authentication_token
-      add_index :users, :authentication_token, :unique => true
+      #add_index :users, :authentication_token, :unique => true
 
       t.string :name, :null => false, :default => ""
 
