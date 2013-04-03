@@ -10,7 +10,7 @@ describe Inventory do
   
   it { should be_valid }
   
-  describe "duplicate entry" do
+  it "does not change number of inventory items with duplicate entry" do
     @ingr = Inventory.new(ingredient: "carrots", user_id: 2)
     expect { @ingr.save }.to change { Inventory.count }.by(0)
   end

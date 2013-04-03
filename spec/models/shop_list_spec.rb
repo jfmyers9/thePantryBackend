@@ -10,7 +10,7 @@ describe ShopList do
   
   it { should be_valid }
   
-  describe "duplicate entry" do
+  it "does not change number of shopping items with duplicate entry" do
     @ingr = ShopList.new(ingredient: "carrots", user_id: 2)
     expect { @ingr.save }.to change { ShopList.count }.by(0)
   end
