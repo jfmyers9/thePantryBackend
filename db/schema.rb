@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(:version => 20130403074957) do
 
   create_table "inventories", :force => true do |t|
     t.string   "ingredient"
+    t.string   "group"
     t.integer  "user_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
@@ -55,6 +56,7 @@ ActiveRecord::Schema.define(:version => 20130403074957) do
 
   create_table "shop_lists", :force => true do |t|
     t.integer  "user_id"
+    t.string   "group"
     t.string   "ingredient"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
