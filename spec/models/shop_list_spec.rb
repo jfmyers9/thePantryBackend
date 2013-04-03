@@ -13,7 +13,8 @@ describe ShopList do
   
   it "does not change number of shopping items with duplicate entry" do
     @ingr = ShopList.new(ingredient: "carrots", group: "vegetable", user_id: 2)
-    expect { @ingr.save }.to change { ShopList.count }.by(0)
+    @ingr.save
+    expect { @test.save }.to change { ShopList.count }.by(0)
   end
   
   describe "no ingredient to add" do

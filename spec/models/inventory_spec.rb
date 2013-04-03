@@ -13,7 +13,8 @@ describe Inventory do
   
   it "does not change number of inventory items with duplicate entry" do
     @ingr = Inventory.new(ingredient: "carrots", group: "vegetable", user_id: 2)
-    expect { @ingr.save }.to change { Inventory.count }.by(0)
+    @ingr.save
+    expect { @test.save }.to change { Inventory.count }.by(0)
   end
   
   describe "no ingredient to add" do
