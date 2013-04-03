@@ -9,6 +9,8 @@ ThePantryBackend::Application.routes.draw do
     post 'registration' => 'registration#create', :as => 'register'
     post 'session' => 'session#create', :as => 'login'
     delete 'session' => 'session#destroy', :as => 'logout'
+    post 'shoplist' => 'shoplist#sync', :as => 'slsync'
+    post 'inventory' => 'inventory#sync', :as => 'invsync'
    end
 
   # The priority is based upon order of creation:
