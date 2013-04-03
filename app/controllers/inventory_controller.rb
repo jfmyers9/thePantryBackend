@@ -1,4 +1,4 @@
-class ShoplistController < ApplicationController
+class InventoryController < ApplicationController
 
 	before_filter :authenticate_user!
 
