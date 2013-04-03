@@ -27,6 +27,7 @@ describe Inventory do
   describe "no user id" do
     before do
       @test.user_id = nil
+    end
     it { should_not be_valid }
     after { @test.user_id = 2 }
   end
