@@ -12,7 +12,7 @@ describe Inventory do
   
   describe "duplicate entry" do
     @ingr = Inventory.new(ingredient: "carrots", user_id: 2)
-    expect { @ingr.save }.not_to change { Inventory.count }
+    expect { @ingr.save }.to change { Inventory.count }.by(0)
   end
   
   describe "no ingredient to add" do

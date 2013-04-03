@@ -12,7 +12,7 @@ describe ShopList do
   
   describe "duplicate entry" do
     @ingr = ShopList.new(ingredient: "carrots", user_id: 2)
-    expect { @ingr.save }.not_to change { ShopList.count }
+    expect { @ingr.save }.to change { ShopList.count }.by(0)
   end
   
   describe "no ingredient to add" do
