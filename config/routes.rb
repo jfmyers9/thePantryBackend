@@ -11,6 +11,7 @@
     delete 'session' => 'session#destroy', :as => 'logout'
     post 'shoplist' => 'shoplist#sync', :as => 'slsync'
     post 'inventory' => 'inventory#sync', :as => 'invsync'
+    post 'recipe' => 'recipe#sync', :as => 'recipesync'
    end
 
   # The priority is based upon order of creation:

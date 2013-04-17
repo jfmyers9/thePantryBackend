@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
 
   has_many :shop_lists, :dependent => :destroy
+  has_many :inventories, :dependent => :destroy
+  has_many :recipes, :dependent => :destroy
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
