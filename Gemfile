@@ -10,6 +10,7 @@ group :development, :test do
 	gem 'rspec-rails'
 end
 
+gem 'simplecov', :require => false, :group => :test
 gem 'devise'
 gem 'activeadmin'
 
