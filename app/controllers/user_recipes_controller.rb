@@ -1,4 +1,4 @@
-class UserRecipeController < ApplicationController
+class UserrecipeController < ApplicationController
   before_filter :authenticate_user!
   
   def sync
