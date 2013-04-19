@@ -2,7 +2,7 @@ class CreateUserRecipes < ActiveRecord::Migration
   def change
     create_table :user_recipes do |t|
       t.string :name
-      t.string :id
+      t.string :recipe_id
       t.integer :user_id
       t.string :ingLines
       t.string :imageUrl

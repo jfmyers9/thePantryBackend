@@ -78,6 +78,7 @@ ActiveRecord::Schema.define(:version => 20130419115157) do
 
   create_table "user_recipes", :force => true do |t|
     t.string   "name"
+    t.string   "recipe_id"
     t.integer  "user_id"
     t.string   "ingLines"
     t.string   "imageUrl"

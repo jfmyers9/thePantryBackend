@@ -14,17 +14,17 @@ class UserRecipeController < ApplicationController
           status = item[:status]
           dirLines = item[:dirLines]
           if status == "add"
-            recipe = UserRecipe.new(:id => recipeId, :name => name, :cooked => cooked, :favorite => favorite,
+            recipe = UserRecipe.new(:recipe_id => recipeId, :name => name, :cooked => cooked, :favorite => favorite,
              :imageUrl => image, :ingLines => ingLines, :dirLines => dirLines, :user_id => current_user.id )
             recipe.save
           elsif status == "delete"
-            UserRecipe.delete_all(:user_id => current_user.id, :id => recipeId)
+            UserRecipe.delete_all(:user_id => current_user.id, :recipe_id => recipeId)
           end
         end
       end
       @recs = UserRecipe.find_all_by_user_id(current_user.id)
       @reclist = @recs.map do |rec|
-        { :id => rec.id, :name => rec.name, :cooked => rec.cooked, :favorite => rec.favorite,
+        { :id => rec.recipe_id, :name => rec.name, :cooked => rec.cooked, :favorite => rec.favorite,
              :imgUrl => rec.imageUrl, :ingLines => rec.ingLines, :dirLines => rec.dirLines }
       end
       render :json => @reclist.to_json
