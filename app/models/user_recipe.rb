@@ -1,6 +1,6 @@
 class UserRecipe < ActiveRecord::Base
 
-  attr_accessible :cooked, :favorite, :id, :imageUrl, :ingLines, :name, :user_id, :dirLines
+  attr_accessible :cooked, :favorite, :recipe_id, :imageUrl, :ingLines, :name, :user_id, :dirLines
 
   belongs_to :user
   
