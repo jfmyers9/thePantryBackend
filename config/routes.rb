@@ -14,7 +14,7 @@
     post 'shoplist' => 'shoplist#sync', :as => 'slsync'
     post 'inventory' => 'inventory#sync', :as => 'invsync'
     post 'recipe' => 'recipe#sync', :as => 'recipesync'
-    post 'userrecipe' => 'userrecipe#sync', :as => 'userrecsync'
+    post 'user_recipe' => 'userrecipe#sync', :as => 'userrecsync'
    end
 
   # The priority is based upon order of creation:
