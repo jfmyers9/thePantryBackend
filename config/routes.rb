@@ -1,4 +1,6 @@
  ThePantryBackend::Application.routes.draw do
+  get "user_recipes/new"
+
   ActiveAdmin.routes(self)
 
   devise_for :admin_users, ActiveAdmin::Devise.config
@@ -12,6 +14,7 @@
     post 'shoplist' => 'shoplist#sync', :as => 'slsync'
     post 'inventory' => 'inventory#sync', :as => 'invsync'
     post 'recipe' => 'recipe#sync', :as => 'recipesync'
+    post 'userrecipe' => 'userrecipe#sync', :as => 'userrecsync'
    end
 
   # The priority is based upon order of creation:
