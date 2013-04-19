@@ -15,7 +15,7 @@ class UserRecipeController < ApplicationController
           dirLines = item[:dirLines]
           if status == "add"
             recipe = UserRecipe.new(:id => recipeId, :name => name, :cooked => cooked, :favorite => favorite,
-             :imageUrl => image, :ingLines => ingredLines, :dirLines => dirLines, :user_id => current_user.id )
+             :imageUrl => image, :ingLines => ingLines, :dirLines => dirLines, :user_id => current_user.id )
             recipe.save
           elsif status == "delete"
             UserRecipe.delete_all(:user_id => current_user.id, :id => recipeId)
