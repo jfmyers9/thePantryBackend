@@ -10,4 +10,6 @@ class UserRecipe < ActiveRecord::Base
   validates :ingLines, :presence => true
   validates :dirLines, :presence => true
 
+  validates_uniqueness_of :name, :recipe_id => [:user_id]
+
 end

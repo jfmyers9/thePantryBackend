@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe ShopList do
-  before { @test = Inventory.new(ingredient: "carrots", group: "vegetable", user_id: 2)}
+  before { @test = ShopList.new(ingredient: "carrots", group: "vegetable", user_id: 2)}
 
   subject{ @test }
   
