@@ -18,11 +18,11 @@ class UserrecipeController < ApplicationController
              :imageUrl => image, :ingLines => ingredLines, :dirLines => dirLines, :user_id => current_user.id )
             recipe.save
           elsif status == "delete"
-            Recipe.delete_all(:user_id => current_user.id, :id => recipeId)
+            UserRecipe.delete_all(:user_id => current_user.id, :id => recipeId)
           end
         end
       end
-      @recs = Recipe.find_all_by_user_id(current_user.id)
+      @recs = UserRecipe.find_all_by_user_id(current_user.id)
       @reclist = @recs.map do |rec|
         { :id => rec.id, :name => rec.name, :cooked => rec.cooked, :favorite => rec.favorite,
              :imgUrl => rec.imageUrl, :ingLines => rec.ingLines, :dirLines => rec.dirLines }
