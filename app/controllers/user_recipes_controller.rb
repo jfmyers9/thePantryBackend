@@ -33,7 +33,7 @@ class UserRecipeController < ApplicationController
 
   def search
     if params[:ingredients] != nil
-      @recs = UserRecipe.all
+      @recs = UserRecipe
       params[:ingredients].each do |ingredient|
         @recs = @recs.where("ing_lines like ?", "%" + ingredient + "%")
       end
