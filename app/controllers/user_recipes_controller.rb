@@ -33,6 +33,15 @@ class UserRecipeController < ApplicationController
 
   def search
     if params[:ingredients] != nil
+      @recs = UserRecipe
+      params[:ingredients].each do |ingredeint|
+        @recs = @recs.where("ing_lines like ?", ingredient)
+      end
+      @reclist = @recs.map do |rec|
+        { :id => rec.recipe_id, :name => rec.name, :cooked => rec.cooked, :favorite => rec.favorite,
+             :imgUrl => rec.image_url, :ingLines => rec.ing_lines, :dirLines => rec.dir_lines }
+      end
+      render :json => @reclist.to_json
     end
   end
 
