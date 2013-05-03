@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130419115157) do
+ActiveRecord::Schema.define(:version => 20130503015618) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -56,16 +56,16 @@ ActiveRecord::Schema.define(:version => 20130419115157) do
 
   create_table "recipes", :force => true do |t|
     t.string   "name"
-    t.string   "recipeID"
-    t.string   "ingredientLines"
+    t.string   "recipe_id"
+    t.string   "ingredient_lines"
     t.string   "image"
     t.string   "attribute"
     t.string   "source"
     t.string   "cooked"
     t.string   "favorite"
     t.integer  "user_id"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
   end
 
   create_table "shop_lists", :force => true do |t|
@@ -80,11 +80,11 @@ ActiveRecord::Schema.define(:version => 20130419115157) do
     t.string   "name"
     t.string   "recipe_id"
     t.integer  "user_id"
-    t.string   "ingLines"
-    t.string   "imageUrl"
+    t.string   "ing_lines"
+    t.string   "image_url"
     t.string   "cooked"
     t.string   "favorite"
-    t.string   "dirLines"
+    t.string   "dir_lines"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

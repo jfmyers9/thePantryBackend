@@ -15,7 +15,8 @@
     post 'inventory' => 'inventory#sync', :as => 'invsync'
     post 'recipe' => 'recipe#sync', :as => 'recipesync'
     post 'user_recipe' => 'user_recipe#sync', :as => 'userrecsync'
-   end
+    get 'user_recipe' => 'user_recipe#search', :as => 'userrecsearch'
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
