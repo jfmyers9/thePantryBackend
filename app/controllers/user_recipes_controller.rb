@@ -35,7 +35,7 @@ class UserRecipeController < ApplicationController
     if params[:ingredients] != nil
       @recs = UserRecipe.all
       params[:ingredients].each do |ingredient|
-        @recs = @recs.where("ing_lines like ?", ingredient)
+        @recs = @recs.where("ing_lines like ?", "%" + ingredient + "%")
       end
       @reclist = @recs.map do |rec|
         { :id => rec.recipe_id, :name => rec.name, :cooked => rec.cooked, :favorite => rec.favorite,
