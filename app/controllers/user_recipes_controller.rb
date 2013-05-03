@@ -10,9 +10,9 @@ class UserRecipeController < ApplicationController
           cooked = item[:cooked]
           favorite = item[:favorite]
           image = item[:image]
-          ingLines = item[:ingLines]
+          ingLines = item[:ingLines].downcase
           status = item[:status]
-          dirLines = item[:dirLines]
+          dirLines = item[:dirLines].downcase
           if status == "add"
             recipe = UserRecipe.new(:recipe_id => recipeId, :name => name, :cooked => cooked, :favorite => favorite,
              :image_url => image, :ing_lines => ingLines, :dir_lines => dirLines, :user_id => current_user.id )
