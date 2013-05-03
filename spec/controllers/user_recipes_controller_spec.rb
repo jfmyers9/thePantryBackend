@@ -27,8 +27,8 @@ describe UserRecipeController, "adding a new recipe" do
 
 	it "adds the specified recipe" do
 		UserRecipe.should_receive(:new).with(:cooked =>"true", :favorite => "true", :recipe_id => "Pasta", :name => "Pasta with Butter", 
-    		:imageUrl => "http://google.com", :ingLines => "pasta,butter",
-    		:dirLines => "Boil water. Cook Pasta. Melt Butter. Eat", :user_id => @user_id).and_return(@user_rec)
+    		:image_url => "http://google.com", :ing_lines => "pasta,butter",
+    		:dir_lines => "Boil water. Cook Pasta. Melt Butter. Eat", :user_id => @user_id).and_return(@user_rec)
 		do_create
 	end
 
@@ -71,8 +71,8 @@ describe UserRecipeController, "adding an invalid recipe" do
 
 	it "adds the specified recipe" do
 		UserRecipe.should_receive(:new).with(:cooked =>"true", :favorite => "true", :recipe_id => "Pasta", :name => "Pasta with Butter", 
-    		:imageUrl => "http://google.com", :ingLines => "pasta,butter",
-    		:dirLines => "Boil water. Cook Pasta. Melt Butter. Eat", :user_id => @user_id).and_return(@user_rec)
+    		:image_url => "http://google.com", :ing_lines => "pasta,butter",
+    		:dir_lines => "Boil water. Cook Pasta. Melt Butter. Eat", :user_id => @user_id).and_return(@user_rec)
 		do_create
 	end
 
